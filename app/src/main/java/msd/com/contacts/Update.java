@@ -36,6 +36,8 @@ public class Update extends AppCompatActivity {
         UpdateName.setVisibility(View.GONE);
         UpdateMobile.setVisibility(View.GONE);
         UpdateEmail.setVisibility(View.GONE);
+        UpdateButton.setVisibility(View.GONE);
+        Title.setVisibility(View.GONE);
     }
 
     public void searchContact(View view)
@@ -62,16 +64,44 @@ public class Update extends AppCompatActivity {
 
     public void updateContact(View view)
     {
-        Log.d("Hi","It works");
-        userDb = new UserDb(getApplicationContext());
-        sqLiteDatabase = userDb.getWritableDatabase();
         String name, email, mobile;
         name = UpdateName.getText().toString();
         mobile = UpdateMobile.getText().toString();
         email = UpdateEmail.getText().toString();
+
+        String emailRegex ="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        String numerical = "^[0-9]*$";
+
+
+        if(name == null || name.equals(""))
+        {
+            Toast.makeText(this, "Please Enter Name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(mobile == null || mobile.equals("") || !mobile.matches(numerical))
+        {
+            Toast.makeText(this, "Please Enter Mobile", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(email == null || email.equals("") || !email.matches(emailRegex))
+        {
+            Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else
+        {
+            userDb = new UserDb(getApplicationContext());
+            sqLiteDatabase = userDb.getWritableDatabase();
+            int count = userDb.updateInfo(searchName, name, mobile, email, sqLiteDatabase);
+            Toast.makeText(getApplicationContext(),name+" updated",Toast.LENGTH_LONG).show();
+            finish();
+        }
+
+        /*userDb = new UserDb(getApplicationContext());
+        sqLiteDatabase = userDb.getWritableDatabase();
         int count = userDb.updateInfo(searchName, name, mobile, email, sqLiteDatabase);
         Toast.makeText(getApplicationContext(),count+" contact updated",Toast.LENGTH_LONG).show();
-        finish();
+        finish();*/
     }
 
 }

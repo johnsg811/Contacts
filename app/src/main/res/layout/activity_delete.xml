@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="msd.com.contacts.Delete">
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchName"
+        android:layout_alignParentLeft="true"
+        android:hint="Enter Name"/>
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_alignParentRight="true"
+        android:onClick="searchContact" />
+    <!-- android:id="@+id/button" -->
+    <!-- android:layout_toRight="@+id/searchName" -->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:layout_marginTop="55dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/delete"
+        android:onClick="deleteContact" />
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Here"
+        android:id="@+id/email"
+        android:layout_below="@+id/phone"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Here"
+        android:id="@+id/phone"
+        android:layout_below="@+id/searchName"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="msd.com.contacts.Update">
+
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchName"
+        android:layout_alignParentTop="true"
+        android:hint="Enter Name"
+        android:layout_marginRight="10dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:onClick="searchContact"
+        android:layout_toRightOf="@+id/searchName" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Contact"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_below="@+id/searchName"
+        android:id="@+id/title"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateName"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:hint="Name Here"
+        android:layout_marginRight="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateMobile"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/updateName"
+        android:hint="Mobile Here"
+        android:layout_marginRight="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/updateMobile"
+        android:hint="Email Here"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_below="@+id/updateEmail"
+        android:onClick="updateContact"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/update"/>
+
+
+</RelativeLayout>

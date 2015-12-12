@@ -22,7 +22,6 @@ public class Search extends AppCompatActivity {
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
     String searchName;
-    //helo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

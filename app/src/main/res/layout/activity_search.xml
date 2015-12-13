@@ -22,14 +22,14 @@
     <!-- android:id="@+id/button" -->
     <!-- android:layout_toRight="@+id/searchName" -->
 
-    <Button
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DELETE"
         android:layout_marginTop="55dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:onClick="deleteContact" />
+        android:onClick="deleteContact" />-->
 
     <TextView
         android:layout_marginTop="100dp"
@@ -65,7 +65,7 @@
         android:text="Message"
         android:layout_marginTop="250dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/mess"
+        android:id="@+id/messageButton"
         android:onClick="sendMessage" />
 
 

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class Search extends AppCompatActivity {
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
     String searchName;
+    Button MessageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,12 @@ public class Search extends AppCompatActivity {
         Message = (EditText)findViewById(R.id.message);
         Phone = (TextView)findViewById(R.id.phone);
         Email = (TextView)findViewById(R.id.email);
+        MessageButton = (Button)findViewById(R.id.messageButton);
 
         Email.setVisibility(View.GONE);
         Phone.setVisibility(View.GONE);
+        Message.setVisibility(View.GONE);
+        MessageButton.setVisibility(View.GONE);
     }
 
     public void searchContact(View view)
@@ -64,8 +69,10 @@ public class Search extends AppCompatActivity {
             SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);*/
 
             Email.setText(email);
-            Email.setVisibility(View.VISIBLE);
-            Phone.setVisibility(View.VISIBLE);
+            /*Email.setVisibility(View.VISIBLE);
+            Phone.setVisibility(View.VISIBLE);*/
+            Message.setVisibility(View.VISIBLE);
+            MessageButton.setVisibility(View.VISIBLE);
         }
     }
 

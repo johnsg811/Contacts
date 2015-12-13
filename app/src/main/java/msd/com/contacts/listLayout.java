@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -26,14 +27,24 @@ public class listLayout extends AppCompatActivity {
         userDb = new UserDb(getApplicationContext());
         sqLiteDatabase = userDb.getReadableDatabase();
         cursor = userDb.getInfo(sqLiteDatabase);
+
         if(cursor.moveToFirst())
         {
             do{
-                String name, mobile, email;
+                String name, mobile, email, latitude, longitude, addressName, address;
                 name = cursor.getString(0);
                 mobile = cursor.getString(1);
                 email = cursor.getString(2);
-                Data data = new Data(name, mobile, email);
+                latitude = cursor.getString(3);
+                longitude = cursor.getString(4);
+                addressName = cursor.getString(5);
+                address = cursor.getString(6);
+
+                Log.e("listlayout Operations", "name: " + name);
+                Log.e("listlayout Operations", "latitude: " + latitude);
+
+
+                Data data = new Data(name, mobile, email, latitude, longitude, addressName, address);
                 listAdapter.add(data);
             }while (cursor.moveToNext());
         }

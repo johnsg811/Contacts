@@ -31,4 +31,40 @@
         android:gravity="center"
         android:textColor="#000000"/>
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_latitude"
+        android:text="Here Latitude"
+        android:gravity="center"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_Longitude"
+        android:text="Here Longitude"
+        android:gravity="center"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_AddressName"
+        android:text="Here Adress Name"
+        android:gravity="center"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_Address"
+        android:text="Here Adress"
+        android:gravity="center"
+        android:textColor="#000000"/>
+
 </LinearLayout>

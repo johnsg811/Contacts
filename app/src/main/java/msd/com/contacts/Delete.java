@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class Delete extends AppCompatActivity {
 
-    TextView Name, Email, Phone;
+    TextView Name, Email, Phone, Latitude, Longitude, AddressName, Address;
     EditText SearchName;
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
@@ -36,8 +36,17 @@ public class Delete extends AppCompatActivity {
 
             String mobile = cursor.getString(0);
             String email = cursor.getString(1);
+            /*String latidude = cursor.getString(2);
+            String longitude = cursor.getString(3);
+            String addressName = cursor.getString(4);
+            String address = cursor.getString(5);*/
             Phone.setText(mobile);
             Email.setText(email);
+            /*Latitude.setText(latidude);
+            Longitude.setText(longitude);
+            AddressName.setText(addressName);
+            Address.setText(address);*/
+
             Email.setVisibility(View.VISIBLE);
             Phone.setVisibility(View.VISIBLE);
         }

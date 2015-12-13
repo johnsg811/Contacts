@@ -18,18 +18,19 @@
         android:layout_height="wrap_content"
         android:text="Search"
         android:layout_alignParentRight="true"
-        android:onClick="searchContact" />
+        android:onClick="searchContact"
+        android:id="@+id/button2" />
     <!-- android:id="@+id/button" -->
     <!-- android:layout_toRight="@+id/searchName" -->
 
-    <!--<Button
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DELETE"
         android:layout_marginTop="55dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:onClick="deleteContact" />-->
+        android:onClick="deleteContact" />
 
     <TextView
         android:layout_marginTop="100dp"
@@ -37,6 +38,15 @@
         android:layout_height="wrap_content"
         android:text="Email Here"
         android:id="@+id/email"
+        android:layout_below="@+id/phone"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Here"
+        android:id="@+id/phone"
         android:layout_below="@+id/searchName"
         android:textAppearance="?android:textAppearanceLarge"/>
 
@@ -45,9 +55,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mobile Here"
-        android:id="@+id/phone"
+        android:id="@+id/latitude"
         android:layout_below="@+id/email"
         android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Here"
+        android:id="@+id/longitude"
+        android:layout_below="@+id/email"
+        android:layout_toRightOf="@id/latitude"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Here"
+        android:id="@+id/addressName"
+        android:layout_below="@+id/latitude"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Here"
+        android:id="@+id/address"
+        android:layout_below="@+id/addressName"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
 
     <EditText
         android:layout_marginTop="200dp"
@@ -67,6 +106,16 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/messageButton"
         android:onClick="sendMessage" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Map"
+        android:id="@+id/btnMaps"
+        android:onClick="maps"
+        android:layout_alignTop="@+id/button"
+        android:layout_toLeftOf="@+id/longitude"
+        android:layout_toStartOf="@+id/longitude" />
 
 
 </RelativeLayout>

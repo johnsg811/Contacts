@@ -48,13 +48,13 @@
         android:layout_height="wrap_content"
         android:text="Save"
         android:id="@+id/saveContact"
-        android:layout_below="@+id/ContactEmail"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        android:onClick="addContact"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="49dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="57dp"
-        android:onClick="addContact"/>
+        android:layout_marginBottom="39dp" />
 
     <Button
         android:layout_width="100dp"
@@ -67,5 +67,51 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="cancel"/>
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Latitude"
+        android:layout_below="@+id/ContactEmail"
+        android:ems="10"
+        android:hint="Latitude"
+        android:textColorHint="#777373"
+        android:layout_alignRight="@+id/saveContact"
+        android:layout_alignEnd="@+id/saveContact" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Longitude"
+        android:layout_below="@+id/ContactEmail"
+        android:ems="10"
+        android:hint="Longitude"
+        android:textColorHint="#777373"
+        android:layout_toRightOf="@+id/Latitude"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddressName"
+        android:ems="10"
+        android:hint="AddressName"
+        android:textColorHint="#777373"
+        android:layout_below="@+id/Latitude"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Address"
+        android:ems="10"
+        android:hint="Address"
+        android:textColorHint="#777373"
+        android:layout_below="@+id/AddressName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

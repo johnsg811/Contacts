@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class AddContact extends AppCompatActivity {
 
-    EditText Name, Mobile, Email;
+    EditText Name, Mobile, Email, Latitude, Longitude, AddressName, Address;
     Context context = this;
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
@@ -27,6 +27,10 @@ public class AddContact extends AppCompatActivity {
         Name = (EditText) findViewById(R.id.ContactName);
         Mobile = (EditText) findViewById(R.id.ContactPhone);
         Email = (EditText) findViewById(R.id.ContactEmail);
+        Latitude = (EditText) findViewById(R.id.Latitude);
+        Longitude = (EditText) findViewById(R.id.Longitude);
+        AddressName = (EditText) findViewById(R.id.AddressName);
+        Address = (EditText) findViewById(R.id.Address);
     }
 
     public void addContact(View view)
@@ -40,6 +44,11 @@ public class AddContact extends AppCompatActivity {
         String name = Name.getText().toString();
         String mobile = Mobile.getText().toString();
         String email = Email.getText().toString();
+        String latitude = Latitude.getText().toString();
+        String longitude = Longitude.getText().toString();
+        String addressName = AddressName.getText().toString();
+        String address = Address.getText().toString();
+
 
         String emailRegex ="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         String numerical = "^[0-9]*$";
@@ -67,7 +76,7 @@ public class AddContact extends AppCompatActivity {
             //String email = Email.getText().toString();
             userDb = new UserDb(context);
             sqLiteDatabase = userDb.getWritableDatabase();
-            userDb.addInfo(name,mobile,email,sqLiteDatabase);
+            userDb.addInfo(name,mobile,email,latitude,longitude,addressName,address,sqLiteDatabase);
             Toast.makeText(getBaseContext(), "Data Saved", Toast.LENGTH_LONG).show();
             userDb.close();
             finish();

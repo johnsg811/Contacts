@@ -17,9 +17,9 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="keyboardHidden|orientation|screenSize"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:configChanges="keyboardHidden|orientation|screenSize"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
@@ -45,7 +45,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBrqG5jLUl_U9o2y7yxiVB0jXQyooXlH84" />
+            android:value="AIzaSyAVKNK-Tp8MJXvcjGZ44nR-rMRSF0B6C6o" />
 
         <activity
             android:name=".Update"
@@ -54,6 +54,10 @@
         <activity
             android:name=".Delete"
             android:label="@string/title_activity_delete" >
+        </activity>
+        <activity
+            android:name=".Maps"
+            android:label="@string/title_activity_maps" >
         </activity>
     </application>
 

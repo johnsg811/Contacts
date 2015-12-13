@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class Search extends AppCompatActivity {
 
-    TextView Email, Phone;
+    TextView Email, Phone, Latitude, Longitude, AddressName, Address;
     EditText SearchName, Message;
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
@@ -33,12 +33,27 @@ public class Search extends AppCompatActivity {
         Message = (EditText)findViewById(R.id.message);
         Phone = (TextView)findViewById(R.id.phone);
         Email = (TextView)findViewById(R.id.email);
+        Latitude = (TextView)findViewById(R.id.latitude);
+        Longitude = (TextView)findViewById(R.id.longitude);
+        AddressName = (TextView)findViewById(R.id.addressName);
+        Address = (TextView)findViewById(R.id.address);
         MessageButton = (Button)findViewById(R.id.messageButton);
 
-        Email.setVisibility(View.GONE);
+        /*Email.setVisibility(View.GONE);
         Phone.setVisibility(View.GONE);
+        Latitude.setVisibility(View.GONE);
+        Longitude.setVisibility(View.GONE);
+        AddressName.setVisibility(View.GONE);
         Message.setVisibility(View.GONE);
-        MessageButton.setVisibility(View.GONE);
+        MessageButton.setVisibility(View.GONE);*/
+    }
+
+    public void maps(View view)
+    {
+        Intent intent = new Intent(Search.this, Maps.class);
+        //startActivity(new Intent(Search.this, Maps.class));
+        intent.putExtra("searchname", searchName);
+        startActivity(intent);
     }
 
     public void searchContact(View view)
@@ -54,7 +69,17 @@ public class Search extends AppCompatActivity {
         {
             String mobile = cursor.getString(0);
             String email = cursor.getString(1);
+            String latitude = cursor.getString(2);
+            String longitude = cursor.getString(3);
+            String addressName = cursor.getString(4);
+            String address = cursor.getString(5);
+
             Phone.setText(mobile);
+            Email.setText(email);
+            Latitude.setText(latitude);
+            Longitude.setText(longitude);
+            AddressName.setText(addressName);
+            Address.setText(address);
 
 
             //CALL THE PERSON ON SEARCH BUTTON
@@ -68,11 +93,16 @@ public class Search extends AppCompatActivity {
             String number = "0877845450";
             SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);*/
 
-            Email.setText(email);
-            /*Email.setVisibility(View.VISIBLE);
-            Phone.setVisibility(View.VISIBLE);*/
-            Message.setVisibility(View.VISIBLE);
-            MessageButton.setVisibility(View.VISIBLE);
+
+            Email.setVisibility(View.VISIBLE);
+            Phone.setVisibility(View.VISIBLE);
+            Latitude.setVisibility(View.VISIBLE);
+            Longitude.setVisibility(View.VISIBLE);
+            AddressName.setVisibility(View.VISIBLE);
+            Address.setVisibility(View.VISIBLE);
+
+            Message.setVisibility(View.GONE);
+            MessageButton.setVisibility(View.GONE);
         }
     }
 

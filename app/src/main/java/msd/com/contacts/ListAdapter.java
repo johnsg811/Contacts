@@ -1,6 +1,7 @@
 package msd.com.contacts;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ public class ListAdapter extends ArrayAdapter {
     }
 
     static class LayoutHandler{
-        TextView Name, Mobile, Email;
+        TextView Name, Mobile, Email, Latitude, Longitude, AddressName, Address;
     }
 
     @Override
@@ -56,6 +57,10 @@ public class ListAdapter extends ArrayAdapter {
             layoutHandler.Name = (TextView)row.findViewById(R.id.text_name);
             layoutHandler.Mobile = (TextView)row.findViewById(R.id.text_mobile);
             layoutHandler.Email = (TextView)row.findViewById(R.id.text_email);
+            layoutHandler.Latitude = (TextView)row.findViewById(R.id.text_latitude);
+            layoutHandler.Longitude = (TextView)row.findViewById(R.id.text_Longitude);
+            layoutHandler.AddressName = (TextView)row.findViewById(R.id.text_AddressName);
+            layoutHandler.Address = (TextView)row.findViewById(R.id.text_Address);
             row.setTag(layoutHandler);
         }
         else
@@ -63,9 +68,28 @@ public class ListAdapter extends ArrayAdapter {
             layoutHandler = (LayoutHandler)row.getTag();
         }
         Data data = (Data)this.getItem(position);
+
+        Log.e("listadapter Operations", "position: " + position);
+
+
+        Log.e("listadapter Operations", "name: " + data.getName());
+        Log.e("listadapter Operations", "latitude: " + data.getLatitude());
+
+
+        Log.e("listadapter Operations", "latitude object reference itself: " + layoutHandler.Latitude);
+
+
+        layoutHandler.Latitude.setText("latitude");
+
+        //layoutHandler.Name.setText
+
         layoutHandler.Name.setText(data.getName());
         layoutHandler.Mobile.setText(data.getMobile());
         layoutHandler.Email.setText(data.getEmail());
+        layoutHandler.Latitude.setText(""+data.getLatitude());
+        layoutHandler.Longitude.setText(""+data.getLongitude());
+        layoutHandler.AddressName.setText(data.getAddressName());
+        layoutHandler.Address.setText(data.getAddress());
 
         return row;
     }

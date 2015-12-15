@@ -1,5 +1,7 @@
 package msd.com.contacts;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -77,16 +79,56 @@ public class Delete extends AppCompatActivity {
 
     public void deleteContact(View view)
     {
-        userDb = new UserDb(getApplicationContext());
+        AlertDialog diaBox = AskOption();
+        diaBox.show();
+        /*userDb = new UserDb(getApplicationContext());
         sqLiteDatabase = userDb.getReadableDatabase();
         userDb.deleteInfo(searchName, sqLiteDatabase);
         Toast.makeText(getBaseContext(), "Deleted", Toast.LENGTH_LONG).show();
         SearchName.setText("");
         Phone.setText("");
         Email.setText("");
-        finish();
+        finish();*/
+    }
+
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+                //set message, title, and icon
+                .setTitle("Delete")
+                .setMessage("Do you want to Delete")
+                //.setIcon(R.drawable.delete)
+
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //your deleting code
+                        userDb = new UserDb(getApplicationContext());
+                        sqLiteDatabase = userDb.getReadableDatabase();
+                        userDb.deleteInfo(searchName, sqLiteDatabase);
+                        Toast.makeText(getBaseContext(), "Deleted", Toast.LENGTH_LONG).show();
+                        SearchName.setText("");
+                        Phone.setText("");
+                        Email.setText("");
+                        finish();
+                        dialog.dismiss();
+                    }
+
+                })
+
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

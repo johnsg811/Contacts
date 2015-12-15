@@ -3,13 +3,15 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="msd.com.contacts.Update">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#2FC99A" tools:context="msd.com.contacts.Update">
 
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/searchName"
+        android:singleLine="true"
         android:layout_alignParentTop="true"
         android:hint="Enter Name"
         android:layout_marginRight="10dp" />
@@ -35,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/updateName"
+        android:singleLine="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/title"
         android:hint="Name Here"
@@ -44,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/updateMobile"
+        android:singleLine="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateName"
         android:hint="Mobile Here"
@@ -53,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/updateEmail"
+        android:singleLine="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateMobile"
         android:hint="Mobile Here"
@@ -64,7 +69,8 @@
         android:id="@+id/updateLatidude"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateEmail"
-        android:hint="Email Here"
+        android:hint="Latidude Here"
+        android:singleLine="true"
         android:layout_marginRight="20dp" />
 
     <EditText
@@ -73,7 +79,8 @@
         android:id="@+id/updateLongitude"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateLatidude"
-        android:hint="Email Here"
+        android:singleLine="true"
+        android:hint="Longitude Here"
         android:layout_marginRight="20dp" />
 
     <EditText
@@ -82,7 +89,8 @@
         android:id="@+id/updateAddressName"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateLongitude"
-        android:hint="Email Here"
+        android:singleLine="true"
+        android:hint="Address Name Here"
         android:layout_marginRight="20dp" />
 
     <EditText
@@ -91,7 +99,8 @@
         android:id="@+id/updateAddress"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/updateAddressName"
-        android:hint="Email Here"
+        android:singleLine="true"
+        android:hint="Address Here"
         android:layout_marginRight="20dp" />
 
     <Button

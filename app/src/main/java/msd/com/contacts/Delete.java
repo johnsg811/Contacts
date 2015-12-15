@@ -10,17 +10,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Delete extends AppCompatActivity {
 
-    TextView Name, Email, Phone, Latitude, Longitude, AddressName, Address;
+    TextView Name, Email, Phone, TextMobile, TextEmail, Latitude, Longitude, AddressName, Address;
     EditText SearchName;
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
     String searchName;
-    Button deleteButton;
+    //Button deleteButton;
+    ImageButton deleteButton;
 
 
     public void searchContact(View view)
@@ -49,6 +51,8 @@ public class Delete extends AppCompatActivity {
 
             Email.setVisibility(View.VISIBLE);
             Phone.setVisibility(View.VISIBLE);
+            TextMobile.setVisibility(View.VISIBLE);
+            TextEmail.setVisibility(View.VISIBLE);
         }
     }
 
@@ -59,11 +63,15 @@ public class Delete extends AppCompatActivity {
         SearchName = (EditText)findViewById(R.id.searchName);
         Phone = (TextView)findViewById(R.id.phone);
         Email = (TextView)findViewById(R.id.email);
-        deleteButton = (Button)findViewById(R.id.delete);
+        deleteButton = (ImageButton)findViewById(R.id.delete);
+        TextMobile = (TextView)findViewById(R.id.txtmobile);
+        TextEmail = (TextView)findViewById(R.id.txtemail);
 
         deleteButton.setVisibility(View.GONE);
         Email.setVisibility(View.GONE);
         Phone.setVisibility(View.GONE);
+        TextMobile.setVisibility(View.GONE);
+        TextEmail.setVisibility(View.GONE);
         Log.d("invisible", "made up to invisible");
     }
 
@@ -76,6 +84,7 @@ public class Delete extends AppCompatActivity {
         SearchName.setText("");
         Phone.setText("");
         Email.setText("");
+        finish();
 
     }
 

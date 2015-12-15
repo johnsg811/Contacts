@@ -3,13 +3,25 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="msd.com.contacts.Search">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#2FC99A"
+    tools:context="msd.com.contacts.Search">
 
+
+<!--    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:background="#2FC99A" tools:context="msd.com.contacts.Search"
+        android:id="@+id/">-->
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/searchName"
+        android:singleLine="true"
         android:layout_alignParentLeft="true"
         android:hint="Enter Name"/>
 
@@ -19,38 +31,130 @@
         android:text="Search"
         android:layout_alignParentRight="true"
         android:onClick="searchContact"
-        android:id="@+id/button2" />
+        android:id="@+id/search" />
     <!-- android:id="@+id/button" -->
     <!-- android:layout_toRight="@+id/searchName" -->
 
-    <Button
+   <!-- <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DELETE"
         android:layout_marginTop="55dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/button"
-        android:onClick="deleteContact" />
+        android:onClick="deleteContact" />-->
 
     <TextView
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email Here"
-        android:id="@+id/email"
-        android:layout_below="@+id/phone"
+        android:text="Mobile: "
+        android:id="@+id/txtmobile"
+        android:layout_below="@+id/searchName"
+        android:layout_marginLeft="1dp"
         android:textAppearance="?android:textAppearanceLarge"/>
 
     <TextView
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email Here"
+        android:layout_toRightOf="@+id/txtmobile"
+        android:text="Mobile Here"
         android:id="@+id/phone"
         android:layout_below="@+id/searchName"
         android:textAppearance="?android:textAppearanceLarge"/>
 
     <TextView
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:id="@+id/txtemail"
+        android:layout_marginLeft="1dp"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+
+    <TextView
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtemail"
+        android:text="Email Here"
+        android:id="@+id/email"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <ImageButton
+        android:background="#2FC99A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCall"
+        android:src="@mipmap/call"
+        android:onClick="call"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp"/>
+
+    <ImageButton
+        android:background="#2FC99A"
+        android:onClick="email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmail"
+        android:src="@mipmap/email"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"/>
+
+
+    <EditText
+        android:id="@+id/emailAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Email Address">
+        <requestFocus />
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/emailSubject"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:hint="Subject">
+    </EditText>
+
+    <EditText
+        android:id="@+id/emailMessage"
+        android:layout_above="@+id/buttonSend"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Email Message"/>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:onClick="email"
+        android:layout_marginBottom="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+
+    <!--<TextView
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,37 +189,69 @@
         android:text="Mobile Here"
         android:id="@+id/address"
         android:layout_below="@+id/addressName"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:textAppearance="?android:textAppearanceLarge"/>-->
 
+
+    <!--<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Map"
+        android:id="@+id/btnMaps"
+        android:onClick="maps"/>-->
+
+    <ImageButton
+        android:background="#2FC99A"
+        android:onClick="maps"
+        android:id="@+id/btnMaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="250dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:background="#2FC99A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageButton"
+        android:onClick="sendMessage"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="150dp"
+        android:src="@mipmap/message" />
 
     <EditText
         android:layout_marginTop="200dp"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/message"
         android:inputType="textMultiLine"
         android:layout_alignParentLeft="true"
         android:hint="Enter message" />
 
+   <Button
+       android:id="@+id/smsButton"
+       android:onClick="smsSend"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="Send"
+       android:layout_marginBottom="37dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true" />
 
-    <Button
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message"
-        android:layout_marginTop="250dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/messageButton"
-        android:onClick="sendMessage" />
+        android:id="@+id/instants"
+        android:onClick="instantMessage"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="200dp"
+        android:src="@mipmap/instant" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Map"
-        android:id="@+id/btnMaps"
-        android:onClick="maps"
-        android:layout_alignTop="@+id/button"
-        android:layout_toLeftOf="@+id/longitude"
-        android:layout_toStartOf="@+id/longitude" />
+
+    <!--android:layout_alignTop="@+id/button"
+    android:layout_toLeftOf="@+id/longitude"
+    android:layout_toStartOf="@+id/longitude" />-->
 
 
 </RelativeLayout>

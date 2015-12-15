@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class AddContact extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class AddContact extends AppCompatActivity {
     Context context = this;
     UserDb userDb;
     SQLiteDatabase sqLiteDatabase;
+    Switch aSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,42 @@ public class AddContact extends AppCompatActivity {
         Longitude = (EditText) findViewById(R.id.Longitude);
         AddressName = (EditText) findViewById(R.id.AddressName);
         Address = (EditText) findViewById(R.id.Address);
+        aSwitch = (Switch) findViewById(R.id.switch1);
+
+        Latitude.setVisibility(View.GONE);
+        Longitude.setVisibility(View.GONE);
+        AddressName.setVisibility(View.GONE);
+        Address.setVisibility(View.GONE);
+
+        //Set a CheckedChange Listener for Switch Button
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton cb, boolean on){
+                if(on)
+                {
+                    //Do something when Switch button is on/checked
+                    //tView.setText("Switch is on.....");
+                    Latitude.setVisibility(View.VISIBLE);
+                    Longitude.setVisibility(View.VISIBLE);
+                    AddressName.setVisibility(View.VISIBLE);
+                    Address.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    //Do something when Switch is off/unchecked
+                    Latitude.setVisibility(View.GONE);
+                    Longitude.setVisibility(View.GONE);
+                    AddressName.setVisibility(View.GONE);
+                    Address.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
     }
+
+
 
     public void addContact(View view)
     {
@@ -88,6 +126,7 @@ public class AddContact extends AppCompatActivity {
     public void cancel(View view)
     {
         finish();
+        overridePendingTransition(R.anim.leftoop_animation, R.anim.rightoop_animation);
     }
 
 

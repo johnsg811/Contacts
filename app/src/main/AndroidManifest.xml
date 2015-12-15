@@ -23,7 +23,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,15 +33,18 @@
         </activity>
         <activity
             android:name=".AddContact"
-            android:label="@string/title_activity_add_contact" >
+            android:label= "New Conatct"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".listLayout"
-            android:label="@string/title_activity_list_layout" >
+            android:label="All Contacts"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Search"
-            android:label="@string/title_activity_search" >
+            android:label="@string/title_activity_search"
+            android:screenOrientation="portrait">
         </activity>
 
         <meta-data
@@ -49,15 +53,23 @@
 
         <activity
             android:name=".Update"
-            android:label="@string/title_activity_update" >
+            android:label="@string/title_activity_update"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Delete"
-            android:label="@string/title_activity_delete" >
+            android:label="@string/title_activity_delete"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Maps"
-            android:label="@string/title_activity_maps" >
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ContactInformation"
+            android:label="@string/title_activity_contact_information"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

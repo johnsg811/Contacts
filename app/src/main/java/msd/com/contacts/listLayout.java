@@ -1,5 +1,6 @@
 package msd.com.contacts;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.util.Collections;
 
 public class listLayout extends AppCompatActivity {
 
@@ -40,15 +45,45 @@ public class listLayout extends AppCompatActivity {
                 addressName = cursor.getString(5);
                 address = cursor.getString(6);
 
-                Log.e("listlayout Operations", "name: " + name);
-                Log.e("listlayout Operations", "latitude: " + latitude);
+                /*Log.e("listlayout Operations", "name: " + name);
+                Log.e("listlayout Operations", "latitude: " + latitude);*/
 
 
                 Data data = new Data(name, mobile, email, latitude, longitude, addressName, address);
                 listAdapter.add(data);
+
             }while (cursor.moveToNext());
         }
+
+
+        /*listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> arg0, View view,
+                                            int position, long id) {
+
+                        Intent intent = new Intent(listLayout.this, ContactInformation.class);
+                        //startActivity(new Intent(Search.this, Maps.class));
+                        intent.putExtra("Name", cursor.getString(0));
+                        startActivity(intent);
+                    }
+                }
+        );*/
+
+       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                    Intent intent = new Intent(listLayout.this, ContactInformation.class);
+                    //startActivity(new Intent(Search.this, Maps.class));
+                    //intent.putExtra("Name", cursor.getString(0));
+                    intent.putExtra("Position", cursor.getString(0));
+                    startActivity(intent);
+            }
+        });
+*/
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

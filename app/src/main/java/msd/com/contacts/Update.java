@@ -71,6 +71,8 @@ public class Update extends AppCompatActivity {
             UpdateLongitude.setText(updatelongitute);
             UpdateAddressName.setText(updateAdressName);
             UpdateAddress.setText(updateAddress);
+            UpdateName.setVisibility(View.VISIBLE);
+            UpdateMobile.setVisibility(View.VISIBLE);
             UpdateEmail.setVisibility(View.VISIBLE);
             UpdateLatidude.setVisibility(View.VISIBLE);
             UpdateLongitude.setVisibility(View.VISIBLE);

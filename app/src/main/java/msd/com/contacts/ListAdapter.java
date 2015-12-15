@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -62,6 +63,7 @@ public class ListAdapter extends ArrayAdapter {
             layoutHandler.AddressName = (TextView)row.findViewById(R.id.text_AddressName);
             layoutHandler.Address = (TextView)row.findViewById(R.id.text_Address);
             row.setTag(layoutHandler);
+
         }
         else
         {

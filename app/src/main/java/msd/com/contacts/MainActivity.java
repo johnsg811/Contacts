@@ -1,7 +1,6 @@
 package msd.com.contacts;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,34 +13,42 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
     }
+
+    /*public void addContact(View v)
+    {
+        startActivity(new Intent(MainActivity.this, AddContact.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
+    }*/
 
     public void NewContact(View v)
     {
         startActivity(new Intent(MainActivity.this, AddContact.class));
-        //overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     public void viewContact(View v)
     {
         startActivity(new Intent(MainActivity.this, listLayout.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     public void search(View v)
     {
         startActivity(new Intent(MainActivity.this, Search.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     public void update(View v)
     {
         startActivity(new Intent(MainActivity.this, Update.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     public void delete(View v)
     {
         startActivity(new Intent(MainActivity.this, Delete.class));
+        overridePendingTransition(R.anim.right_animation, R.anim.left_animation);
     }
 
     @Override
